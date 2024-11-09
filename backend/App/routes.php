@@ -24,3 +24,4 @@ CORS::setHeaders();
 
 Router::get('/api/', 'MovieController', 'index');
 Router::get('/api/get-movie', 'MovieController', 'getMovie');
+Router::get('/api/get-box-office-list', 'MovieController', 'getBoxOfficeList');
