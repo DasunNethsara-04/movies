@@ -1,0 +1,28 @@
+{
+    "name": "dasunnethsara/zenithphp",
+    "description": "ZenithPHP, a simple and lightweight PHP framework designed to streamline web application development. ZenithPHP follows the MVC (Model-View-Controller) architecture and provides developers with a clean and flexible foundation to build modern PHP applications with ease.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Dasun Nethsara",
+            "email": "techsaralk.pro@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6",
+        "ext-pdo": "*",
+        "ext-openssl": "*",
+        "firebase/php-jwt": "^6.10",
+        "hmerritt/imdb-api": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "ZenithPHP\\App\\": "App/",
+            "ZenithPHP\\App\\Controllers\\": "App/Controllers/",
+            "ZenithPHP\\Model\\": "App/Models/",
+            "ZenithPHP\\Core\\": "Core/src/",
+            "ZenithPHP\\Config\\": "Config/",
+            "ZenithPHP\\Migrations\\": "Migrations/"
+        }
+    }
+}
