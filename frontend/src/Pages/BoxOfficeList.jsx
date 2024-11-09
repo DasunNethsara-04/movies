@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import MainNavbar from '../Components/MainNavbar'
+import MovieCard from '../Components/MovieCard';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const BoxOfficeList = () => {
     const [weekendTitleName, setWeekendTitleName] = useState('');
@@ -16,20 +18,23 @@ const BoxOfficeList = () => {
     return (
         <>
             <MainNavbar />
-            <h1>Box Office</h1>
-            <h3>{weekendTitleName}</h3>
-            <ul>
-                {movieList.map((movie, index) => {
-                    return (
-                        <li key={index}>{movie.title.slice(3)}
-                            <div>
-                                <img src={movie.coverImage} alt={movie.title} />
-                                <p>Rating: {movie.rating}</p>
-                            </div>
-                        </li>
-                    );
-                })}
-            </ul>
+
+            <Container fluid>
+                <h1>Box Office</h1>
+                <h3>{weekendTitleName}</h3>
+
+                <Row>
+                    {movieList.map((movie, index) => {
+                        return (
+                            <Col key={index} md={3} className="mb-4">
+                                <MovieCard coverImg={movie.coverImage} title={movie.title}></MovieCard>
+                            </Col>
+                        );
+                    })}
+                </Row>
+            </Container>
+
+
         </>
     )
 }

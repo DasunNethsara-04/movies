@@ -1,0 +1,61 @@
+.movie-card {
+    position: relative;
+    border-radius: 10px;
+    /* Optional: Add rounded corners to the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Optional: Card shadow for depth */
+    overflow: hidden;
+}
+
+.movie-card-img {
+    background-size: cover;
+    /* Ensures image covers the entire card while maintaining aspect ratio */
+    background-position: center;
+    /* Centers the image inside the card */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* Ensure image stays behind the card content */
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    /* Semi-transparent overlay */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.card-overlay.show {
+    opacity: 1;
+    /* Show the overlay on hover */
+}
+
+.movie-card-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    display: none;
+    /* Initially hidden */
+}
+
+.card-overlay.show .card-text {
+    display: block;
+    /* Show on hover */
+}
